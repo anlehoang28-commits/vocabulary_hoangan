@@ -1,0 +1,188 @@
+/* Custom Styles and Micro-animations for VocabMaster */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shakeError {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes pulseSuccess {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+@keyframes pulseAudioWave {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-shake {
+  animation: shakeError 0.4s ease-in-out;
+}
+
+.pulse-success {
+  animation: pulseSuccess 0.8s ease-out;
+}
+
+.playing-audio {
+  animation: pulseAudioWave 0.6s infinite ease-in-out;
+}
+
+/* Nav Tabs Active Styling */
+.nav-tab.active {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.nav-tab:not(.active) {
+  color: #94a3b8;
+}
+
+.nav-tab:not(.active):hover {
+  color: #e2e8f0;
+  background: rgba(30, 41, 59, 0.5);
+}
+
+/* Mode Switcher active */
+.mode-pill.active {
+  background: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+/* Manager Filter active */
+.mgr-filter.active {
+  background: #312e81;
+  color: #c7d2fe;
+  border-color: #6366f1;
+}
+
+/* Choice Buttons in Mode 1 */
+.choice-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid #1f293d;
+  color: #e2e8f0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.choice-btn:hover:not(:disabled) {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: #475569;
+  transform: translateY(-1px);
+}
+
+.choice-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.choice-btn.selected-correct {
+  background: rgba(16, 185, 129, 0.18) !important;
+  border-color: #10b981 !important;
+  color: #6ee7b7 !important;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+}
+
+.choice-btn.selected-incorrect {
+  background: rgba(244, 63, 94, 0.18) !important;
+  border-color: #f43f5e !important;
+  color: #fda4af !important;
+  animation: shakeError 0.4s ease-in-out;
+}
+
+.choice-btn.reveal-correct {
+  background: rgba(16, 185, 129, 0.14) !important;
+  border-color: #059669 !important;
+  color: #a7f3d0 !important;
+}
+
+.choice-key-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.5rem;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f293d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+.capitalize-first::first-letter {
+  text-transform: uppercase;
+}
