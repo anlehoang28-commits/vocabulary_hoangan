@@ -1,0 +1,1 @@
+Sau khi hoan tat sua code va kiem tra khong loi, hay tu dong chay trong terminal: git add . ; git commit -m "update: cap nhat tinh nang" ; git push origin main
